@@ -1,5 +1,3 @@
-import { json } from "express";
-
 const employees = [
     {
       id: 1,
@@ -189,10 +187,12 @@ const employees = [
 
 export const setLocalStorage = () => {
     localStorage.setItem('employees', JSON.stringify(employees))
-    localStorage.setItem('admin', json.stringify(admin))
+    localStorage.setItem('admin', JSON.stringify(admin))
 }
 
 export const getLoaclStorage = () => {
     const employees = JSON.parse(localStorage.getItem('employees'))
     const admin = JSON.parse(localStorage.getItem('admin'))
+
+    return(employees, admin)
 }
